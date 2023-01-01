@@ -1,5 +1,5 @@
 <footer id="footer">
-    <div class="footer">© Ryoma Nishitsuji</div>
+    <div class="footer">&copy; <?php echo bloginfo('name'); ?></div>
     <?php wp_footer(); ?>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -427,62 +427,62 @@ main #page-mainvisual .wroks-images #img-SP {
   top: 0%;
   left: 60%;
 }
-main .sec-detail .detail-title {
+main .sec-site .site-title {
   margin-top: 104px;
   margin-left: 80px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-main .sec-detail .detail-title h4 {
+main .sec-site .site-title h4 {
   font-size: 24px;
   border-bottom: #5B9511 solid 3px;
 }
-main .sec-detail .detail-url {
+main .sec-site .site-url {
   margin-top: 48px;
 }
-main .sec-detail .detail-url h4 {
+main .sec-site .site-url h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-url h5 {
+main .sec-site .site-url h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-lang {
+main .sec-site .site-lang {
   margin-top: 48px;
 }
-main .sec-detail .detail-lang h4 {
+main .sec-site .site-lang h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-lang h5 {
+main .sec-site .site-lang h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-purpose {
+main .sec-site .site-purpose {
   margin-top: 48px;
 }
-main .sec-detail .detail-purpose h4 {
+main .sec-site .site-purpose h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-purpose h5 {
+main .sec-site .site-purpose h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-about {
+main .sec-site .site-about {
   margin-top: 48px;
   margin-bottom: 128px;
 }
-main .sec-detail .detail-about h4 {
+main .sec-site .site-about h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-about h5 {
+main .sec-site .site-about h5 {
   margin-top: 24px;
   margin-left: 152px;
   font-size: 16px;

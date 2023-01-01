@@ -16,7 +16,7 @@
             </h4>
         </div>
         <div class="main-image">
-            <img src="img/main-image.jpg" alt="mainn-image">
+            <img src="img/main-image.jpg" alt="main-image">
         </div>
     </div>
     <div id="about" class="wrapper">

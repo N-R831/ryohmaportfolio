@@ -12,7 +12,7 @@
 </head>
 <body>
     <header id="header" >
-        <a href="index.html" class="title">
+        <a href="<?php echo esc_url(home_url()); ?>" class="title">
             <h3 id="title-title">
                 Frontend Developer
             </h3>
