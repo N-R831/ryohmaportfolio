@@ -39,10 +39,29 @@ a {
 }
 
 .view-more {
-  width: 15%;
+  position: absolute;
+  bottom: 64px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  padding-right: 8px;
+  border-left: #5B9511 solid 2px;
+  border-bottom: #5B9511 solid 2px;
+  width: 9rem;
 }
-.view-more img {
-  width: 100%;
+.view-more a p {
+  display: inline;
+}
+.view-more a span {
+  display: inline;
+}
+.view-more a span::before {
+  display: inline-block;
+  content: "";
+  width: 2px;
+  height: 30px;
+  border-right: #5B9511 solid 2px;
+  transform: rotate(-45deg);
+  position: absolute;
 }
 
 /********************
@@ -178,8 +197,12 @@ main #about.wrapper .about-main .about-chr {
   padding: 256px 128px;
 }
 main #about.wrapper .about-main .about-chr .view-more {
-  position: absolute;
-  bottom: 64px;
+  bottom: 108px;
+  text-align: left;
+}
+main #about.wrapper .about-main .about-chr .view-more span::before {
+  left: 130px;
+  top: -1px;
 }
 main #about.wrapper .about-main .about-img {
   grid-column: 2/3;
@@ -272,14 +295,20 @@ main #works .works-view .slider .slider-img {
 main #works .works-view .slider .slider-img img {
   height: auto;
   width: 100%;
+  box-shadow: 0 0 8px 4px #ccc;
   aspect-ratio: 2/1;
 }
 main #works .works-view .slider.slick-initialized {
   visibility: visible;
 }
 main #works .view-more {
-  position: absolute;
+  bottom: 0px;
   left: 50%;
+  letter-spacing: 0.15em;
+}
+main #works .view-more span::before {
+  left: 130px;
+  top: -5px;
 }
 main #contact.wrapper {
   margin-top: 128px;

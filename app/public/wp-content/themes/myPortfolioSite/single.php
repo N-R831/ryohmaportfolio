@@ -19,7 +19,7 @@
     </div>
     <div class="sec-site">
         <div class="site-title">
-            <h4>COFFEE</h4>
+            <h4><?php the_title(); ?></h4>
         </div>
         <div class="site-url">
             <h4>サイトURL</h4>

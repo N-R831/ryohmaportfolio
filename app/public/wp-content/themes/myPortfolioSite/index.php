@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div class="main-visual wrapper">
+<div class="main-visual wrapper">
         <div class="profile-col1-row1">
             <h1 id="profile-name">
                 Ryoma.N
@@ -16,7 +16,7 @@
             </h4>
         </div>
         <div class="main-image">
-            <img src="img/main-image.jpg" alt="main-image">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/main-image.jpg" alt="main-image">
         </div>
     </div>
     <div id="about" class="wrapper">
@@ -37,11 +37,14 @@
                     常にお客様の求めている機能を<br>追及するエンジニアになることを目指しています
                 <p>
                 <div class="view-more">
-                    <a href="about.html"><img src="img/ViewMore.png" alt="View More"></a>
+                        <a href="<?php echo esc_url(home_url('/about/')); ?>">
+                            <p>View More</p>
+                            <span></span>
+                        </a>
                 </div>
             </div>
             <div class="about-img">
-                <img src="img/about-img.jpg" alt="about-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/about-img.jpg" alt="about-img">
             </div>
         </div>
         <div class="about-skills">
@@ -56,7 +59,7 @@
             <div class="block-skills">
                 <div class="skills-parts">
                     <div class="parts-image">
-                        <img src="img/skills1.png" alt="skills1">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/skills1.png" alt="skills1">
                     </div>
                     <div class="parts-chr">
                         <h3>WEBサイトの制作</h3>
@@ -67,7 +70,7 @@
                 </div>
                 <div class="skills-parts">
                     <div class="parts-image">
-                        <img src="img/skills2.png" alt="skills2">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/skills2.png" alt="skills2">
                     </div>
                     <div class="parts-chr">
                         <h3>サイトに動きをつける</h3>
@@ -78,7 +81,7 @@
                 </div>
                 <div class="skills-parts">
                     <div class="parts-image">
-                        <img src="img/skills3.png" alt="skills3">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/skills3.png" alt="skills3">
                     </div>
                     <div class="parts-chr">
                         <h3>WordPressの実装</h3>
@@ -101,13 +104,24 @@
         </div>
         <div class="works-view">
             <div class="slider">
-                <div class="slider-img"><img src="img/works1.png" alt="works1"></div>
-                <div class="slider-img"><img src="img/works2.png" alt="works2"></div>
-                <div class="slider-img"><img src="img/works3.png" alt="works3"></div>
+            <?php
+                $args = array(
+                'posts_per_page' => 5
+                );
+            ?>
+                <?php $posts = get_posts($args); ?>
+                <?php foreach($posts as $post): ?>
+                    <?php setup_postdata($post); ?>
+                    <div class="slider-img"><img src="<?php the_post_thumbnail_url('full'); ?>" alt=""></div>
+                <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
             </div>
         </div>
         <div class="view-more">
-            <a href="works.html"><img src="img/ViewMore_white.png" alt="View More"></a>
+                <a href="<?php echo esc_url(home_url('/category/Works/')); ?>">
+                    <p>View More</p>
+                    <span></span>
+                </a>
         </div>
     </div>
     <div id="contact" class="wrapper">
@@ -123,7 +137,7 @@
             <p>お仕事のご相談やご依頼など、お気軽にご連絡ください</p>
         </div>
         <div class="to-contact">
-            <a href="contact.html">
+            <a href="<?php echo esc_url(home_url('/contact/')); ?>">
                 <p>お問い合わせページへ</p>
             </a>
         </div>
