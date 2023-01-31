@@ -2,21 +2,30 @@
 
 <main>
 <div class="main-visual wrapper">
-        <div class="profile-col1-row1">
+        <div class="profile-top">
             <h1 id="profile-name">
                 Ryoma.N
             </h1>
             <h5 id="profile-title">
                 Frontend Developer
             </h5>
-        </div>
-        <div class="profile-col1-row2">
             <h4 class="profile-content">
                 社内SEの経験を生かし、相手の立場に立ってWeb制作いたします
             </h4>
         </div>
         <div class="main-image">
             <img src="<?php echo get_template_directory_uri(); ?>/img/main-image.jpg" alt="main-image">
+        </div>
+        <div class="profile-top-sp">
+            <h1 id="profile-name">
+                Ryoma.N
+            </h1>
+            <h5 id="profile-title">
+                Frontend Developer
+            </h5>
+            <h4 class="profile-content">
+                社内SEの経験を生かし、相手の立場に立ってWeb制作いたします
+            </h4>
         </div>
     </div>
     <div id="about" class="wrapper">
@@ -29,6 +38,9 @@
             </h4>
         </div>
         <div class="about-main">
+        <div class="about-img">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/about-img.jpg" alt="about-img">
+            </div>
             <div class="about-chr">
                 <p>
                     Web制作を中心に活動するフロントエンドエンジニア。<br>組み込み系エンジニアや社内SEも経験。
@@ -42,9 +54,6 @@
                             <span></span>
                         </a>
                 </div>
-            </div>
-            <div class="about-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/about-img.jpg" alt="about-img">
             </div>
         </div>
         <div class="about-skills">

@@ -5,7 +5,7 @@ CSSファイルの読み込み
 **************************************************/
 function my_enqueue_styles() {
   wp_enqueue_style('ress', '//cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css', array(), false, 'all');
-  wp_enqueue_style('style', get_stylesheet_uri(), array('ress'), false, 'all');
+  wp_enqueue_style('style', get_template_directory_uri().'/css/style.css', array('ress'), false, 'all');
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_styles');
 

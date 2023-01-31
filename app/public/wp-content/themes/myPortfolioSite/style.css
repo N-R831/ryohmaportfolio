@@ -1,8 +1,3 @@
-@charset "UTF-8";
-/*
-Theme Name: myPortfolioSite
-*/
-
 /********************
 entire
 ********************/
@@ -69,7 +64,7 @@ header
 ********************/
 #header {
   width: 100%;
-  height: 120px;
+  height: 80px;
   padding: 0 40px;
   background-color: #FCFEEE;
   display: flex;
@@ -117,60 +112,113 @@ header
   position: relative;
   bottom: -24px;
 }
+#header .disp-sp {
+  position: fixed;
+  right: -30px;
+}
+#header .disp-sp #humberger-button {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+  z-index: 30;
+}
+#header .disp-sp #humberger-button span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+#header .disp-sp #humberger-button span:nth-child(1) {
+  top: 10px;
+}
+#header .disp-sp #humberger-button span:nth-child(2) {
+  bottom: 10px;
+}
+#header .disp-sp #hamburger-navigation {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+  visibility: hidden;
+}
+#header .disp-sp #hamburger-navigation .sections {
+  margin-top: 180px;
+}
+#header .disp-sp #hamburger-navigation .sections li {
+  margin-bottom: 40px;
+}
+#header .disp-sp #hamburger-navigation .sections a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 32px;
+}
+#header .disp-sp #hamburger-navigation.active {
+  opacity: 0.8;
+  visibility: visible;
+}
+#header .disp-sp #humberger-button.active span:nth-child(1) {
+  top: 15px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+#header .disp-sp #humberger-button.active span:nth-child(2) {
+  top: 15px;
+  background: #fff;
+  transform: rotate(45deg);
+}
 
 /********************
 main
 ********************/
 main .main-visual.wrapper {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 70% 30%;
-  margin-top: 120px;
-  height: 100vh;
-  height: 854px;
+  margin-top: 100px;
+  height: 80vh;
+  position: relative;
 }
-main .main-visual.wrapper .profile-col1-row1 {
+main .main-visual.wrapper .profile-top {
   padding: 0 40px;
-  grid-row: 1/2;
-  grid-column: 1/2;
   position: relative;
   z-index: 10;
 }
-main .main-visual.wrapper .profile-col1-row1 #profile-name {
+main .main-visual.wrapper .profile-top #profile-name {
+  width: 100%;
   position: absolute;
   top: 236px;
   display: block;
   font-size: 64px;
   font-family: "Noto Serif";
 }
-main .main-visual.wrapper .profile-col1-row1 #profile-title {
+main .main-visual.wrapper .profile-top #profile-title {
   position: absolute;
   top: 320px;
   display: block;
 }
-main .main-visual.wrapper .profile-col1-row2 {
-  grid-row: 2/3;
-  grid-column: 1/3;
-  position: relative;
-  z-index: 10;
-}
-main .main-visual.wrapper .profile-col1-row2 .profile-content {
-  position: absolute;
-  left: 56px;
-  bottom: 96px;
-  font-size: 24px;
-  display: block;
-}
 main .main-visual.wrapper .main-image {
-  grid-row: 1/2;
-  grid-column: 2/3;
-  width: 100%;
-  position: relative;
+  width: 800px;
+  position: absolute;
+  right: 0px;
 }
 main .main-visual.wrapper .main-image img {
   width: 100%;
+}
+main .main-visual.wrapper .profile-content {
   position: absolute;
-  right: 0px;
+  left: 56px;
+  bottom: -32px;
+  font-size: 24px;
+  display: block;
 }
 main #about.wrapper {
   padding-top: 128px;
@@ -178,13 +226,13 @@ main #about.wrapper {
 main #about.wrapper .about-main {
   width: 100%;
   display: grid;
-  grid-template-columns: 53% 47%;
+  grid-template-columns: 47% 53%;
   margin-top: 8px;
-  margin-left: 40px;
+  padding-right: 40px;
   margin-bottom: 128px;
 }
 main #about.wrapper .about-main .about-chr {
-  grid-column: 1/2;
+  grid-column: 2/3;
   background-color: #FCFEEE;
   display: flex;
   justify-content: center;
@@ -194,10 +242,10 @@ main #about.wrapper .about-main .about-chr {
   letter-spacing: 0.15em;
   line-height: 140%;
   position: relative;
-  padding: 256px 128px;
+  padding: 144px 80px;
 }
 main #about.wrapper .about-main .about-chr .view-more {
-  bottom: 108px;
+  bottom: 64px;
   text-align: left;
 }
 main #about.wrapper .about-main .about-chr .view-more span::before {
@@ -205,17 +253,18 @@ main #about.wrapper .about-main .about-chr .view-more span::before {
   top: -1px;
 }
 main #about.wrapper .about-main .about-img {
-  grid-column: 2/3;
+  grid-column: 1/2;
   position: relative;
+  z-index: 10;
 }
 main #about.wrapper .about-main .about-img img {
-  width: 472px;
-  height: 400px;
+  width: 85%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   position: absolute;
   top: 56px;
-  left: -32px;
+  left: 108px;
 }
 main #about.wrapper .about-skills .skills-title {
   margin-left: 96px;
@@ -249,15 +298,15 @@ main #about.wrapper .about-skills .skills-title .parts-subtitle::after {
   content: " -";
 }
 main #about.wrapper .about-skills .block-skills {
-  display: grid;
+  display: flex;
   justify-content: space-between;
-  grid-template-columns: 32% 32% 32%;
   margin-left: 40px;
   margin-right: 40px;
 }
 main #about.wrapper .about-skills .block-skills .skills-parts {
   box-shadow: 0 0 8px 4px #ccc;
   padding: 0 40px;
+  width: 32%;
 }
 main #about.wrapper .about-skills .block-skills .skills-parts .parts-image {
   width: 100%;
@@ -265,6 +314,7 @@ main #about.wrapper .about-skills .block-skills .skills-parts .parts-image {
   margin-bottom: 24px;
 }
 main #about.wrapper .about-skills .block-skills .skills-parts .parts-image img {
+  width: 100%;
   max-height: 300px;
 }
 main #about.wrapper .about-skills .block-skills .skills-parts .parts-chr h3 {
@@ -344,19 +394,18 @@ main #about-mainvisual.wrapper .sec-main {
   justify-content: space-between;
   padding: 0 40px;
   position: relative;
-  height: 80vh;
+  height: 54vh;
 }
 main #about-mainvisual.wrapper .sec-main .about-chr {
   width: 49%;
-  min-height: 524px;
+  padding: 120px 0;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #FCFEEE;
   position: absolute;
-  left: 0;
-  top: 0;
+  top: 24px;
 }
 main #about-mainvisual.wrapper .sec-main .about-chr p {
   display: block;
@@ -407,7 +456,7 @@ main #about-career.wrapper .career-main {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 30%;
+  padding: 0 10%;
 }
 main #about-career.wrapper .career-main .career-left {
   margin-right: 32px;
@@ -431,6 +480,10 @@ main #about-career.wrapper .career-main .career-right .career-heading::before {
   position: absolute;
   top: 0px;
   left: -40px;
+}
+main #about-career.wrapper .career-main .career-right .career-heading h3 {
+  font-size: 16px;
+  font-weight: bold;
 }
 main #page-mainvisual {
   /********************
@@ -461,62 +514,62 @@ main #page-mainvisual .wroks-images #img-SP {
   top: 0%;
   left: 60%;
 }
-main .sec-detail .detail-title {
+main .sec-site .site-title {
   margin-top: 104px;
   margin-left: 80px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-main .sec-detail .detail-title h4 {
+main .sec-site .site-title h4 {
   font-size: 24px;
   border-bottom: #5B9511 solid 3px;
 }
-main .sec-detail .detail-url {
+main .sec-site .site-url {
   margin-top: 48px;
 }
-main .sec-detail .detail-url h4 {
+main .sec-site .site-url h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-url h5 {
+main .sec-site .site-url h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-lang {
+main .sec-site .site-lang {
   margin-top: 48px;
 }
-main .sec-detail .detail-lang h4 {
+main .sec-site .site-lang h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-lang h5 {
+main .sec-site .site-lang h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-purpose {
+main .sec-site .site-purpose {
   margin-top: 48px;
 }
-main .sec-detail .detail-purpose h4 {
+main .sec-site .site-purpose h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-purpose h5 {
+main .sec-site .site-purpose h5 {
   font-size: 16px;
   margin-top: 24px;
   margin-left: 152px;
 }
-main .sec-detail .detail-about {
+main .sec-site .site-about {
   margin-top: 48px;
   margin-bottom: 128px;
 }
-main .sec-detail .detail-about h4 {
+main .sec-site .site-about h4 {
   margin-left: 112px;
   font-size: 24px;
 }
-main .sec-detail .detail-about h5 {
+main .sec-site .site-about h5 {
   margin-top: 24px;
   margin-left: 152px;
   font-size: 16px;
@@ -555,8 +608,11 @@ main #contact-mainvisual {
   /********************
   contact.html
   ********************/
-  margin: 128px 0;
+  margin: 80px 0;
   min-height: 100vh;
+}
+main #contact-mainvisual .wpcf7-not-valid-tip {
+  margin-top: 20px;
 }
 main #contact-mainvisual .sec-input .sec-input-content {
   margin-top: 72px;
@@ -581,12 +637,16 @@ main #contact-mainvisual .sec-input #sec-input-name .sec-input-text .required {
   color: #FD0000;
   display: inline;
 }
-main #contact-mainvisual .sec-input #sec-input-name input {
+main #contact-mainvisual .sec-input #sec-input-name p {
   width: 50%;
   height: 40px;
   border: #AEAEAE solid 1px;
   border-radius: 8px;
   padding: 8px;
+}
+main #contact-mainvisual .sec-input #sec-input-name p input {
+  width: 100%;
+  height: 100%;
 }
 main #contact-mainvisual .sec-input #sec-input-mail {
   display: flex;
@@ -608,12 +668,16 @@ main #contact-mainvisual .sec-input #sec-input-mail .sec-input-text .required {
   color: #FD0000;
   display: inline;
 }
-main #contact-mainvisual .sec-input #sec-input-mail input {
+main #contact-mainvisual .sec-input #sec-input-mail p {
   width: 50%;
   height: 40px;
   border: #AEAEAE solid 1px;
   border-radius: 8px;
   padding: 8px;
+}
+main #contact-mainvisual .sec-input #sec-input-mail p input {
+  width: 100%;
+  height: 100%;
 }
 main #contact-mainvisual .sec-input #sec-input-contact {
   display: flex;
@@ -635,19 +699,23 @@ main #contact-mainvisual .sec-input #sec-input-contact .sec-input-text .required
   color: #FD0000;
   display: inline;
 }
-main #contact-mainvisual .sec-input #sec-input-contact textarea {
+main #contact-mainvisual .sec-input #sec-input-contact p {
   width: 50%;
   height: 425px;
   border: #AEAEAE solid 1px;
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 8px;
+}
+main #contact-mainvisual .sec-input #sec-input-contact p textarea {
+  width: 100%;
+  height: 100%;
 }
 main #contact-mainvisual .sec-button {
   margin: 0 auto;
   margin-top: 72px;
   width: 20%;
 }
-main #contact-mainvisual .sec-button div {
+main #contact-mainvisual .sec-button input {
   padding: 16px 40px;
   border: #5B9511 solid 1px;
   border-radius: 8px;
@@ -655,6 +723,10 @@ main #contact-mainvisual .sec-button div {
   color: #FFF;
   font-size: 24px;
   text-align: center;
+  display: block;
+}
+main #contact-mainvisual .sec-button .wpcf7-spinner {
+  visibility: hidden;
 }
 main #contact-mainvisual .sec-button div:hover {
   cursor: pointer;
@@ -669,4 +741,117 @@ footer {
 footer .footer {
   padding: 40px 0;
   text-align: center;
+}
+
+/********************
+responsive
+********************/
+@media screen and (max-width: 768px) {
+  /********************
+  header
+  ********************/
+  #header #navi {
+    visibility: hidden;
+  }
+  #header .disp-sp {
+    right: 24px;
+  }
+  #header .disp-sp #humberger-button {
+    visibility: visible;
+  }
+  main .main-image {
+    width: 100%;
+    position: absolute;
+    right: auto;
+    left: 0px;
+  }
+  main #about.wrapper .about-skills .block-skills {
+    display: block;
+  }
+  main #about.wrapper .about-skills .block-skills .skills-parts {
+    width: 80%;
+    margin: 40px auto;
+  }
+  main #about.wrapper .about-skills .block-skills .skills-parts .parts-image {
+    width: 100%;
+    padding: 16px, 0;
+    margin-bottom: 24px;
+  }
+  main #about.wrapper .about-skills .block-skills .skills-parts .parts-image img {
+    width: 100%;
+    max-height: 300px;
+  }
+  main #about.wrapper .about-main {
+    display: block;
+    position: relative;
+  }
+  main #about.wrapper .about-main .about-chr {
+    padding: 120px 80px;
+    top: 108px;
+  }
+  main #about.wrapper .about-main .about-chr .view-more {
+    bottom: 64px;
+    text-align: left;
+  }
+  main #about.wrapper .about-main .about-chr .view-more span::before {
+    left: 130px;
+    top: -1px;
+  }
+  main #about.wrapper .about-main .about-img img {
+    width: 50%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    top: 1vh;
+    left: 48px;
+  }
+  main #about-career.wrapper .career-main {
+    padding: 0 48px;
+  }
+  main #works .works-view .slider .slider-img {
+    padding: 0 24px;
+  }
+  main #works .works-view .slider.slick-initialized {
+    visibility: visible;
+  }
+  main #works .view-more {
+    bottom: 0px;
+    left: 50%;
+    letter-spacing: 0.15em;
+  }
+  main #works .view-more span::before {
+    left: 130px;
+    top: -5px;
+  }
+  main #works-mainvisual {
+    /********************
+    works.html
+    ********************/
+  }
+  main #works-mainvisual .sec-thumbnail ul {
+    display: block;
+  }
+  main #contact-mainvisual {
+    margin: 80px 0;
+    min-height: 100vh;
+  }
+  main #contact-mainvisual .sec-input #sec-input-name .sec-input-text h3 {
+    font-size: 1.5em;
+    display: inline;
+  }
+  main #contact-mainvisual .sec-input #sec-input-mail .sec-input-text h3 {
+    font-size: 1.5em;
+    display: inline;
+  }
+  main #contact-mainvisual .sec-input #sec-input-contact .sec-input-text h3 {
+    font-size: 1.5em;
+    display: inline;
+  }
+  main #contact-mainvisual .sec-button {
+    width: 50%;
+  }
+  main #contact-mainvisual .sec-button input {
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=style.css.map */
